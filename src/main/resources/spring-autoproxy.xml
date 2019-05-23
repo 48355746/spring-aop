@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="waiterTarget" class="com.ledo.advisor.Waiter"/>
+    <bean id="sellerTarget" class="com.ledo.advisor.Seller"/>
+    <bean id="greetingAdvice" class="com.ledo.advisor.GreetingBeforeAdvice"/>
+    <!--根据beanNames 匹配-->
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator"
+          p:beanNames="*Target"
+          p:interceptorNames="greetingAdvice"
+          p:optimize="true"></bean>
+</beans>

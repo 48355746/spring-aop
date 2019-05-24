@@ -8,4 +8,7 @@ public class Waiter {
         System.out.println("waiter serving to " + name + "......");
     }
 
+    public String Bye() {
+        return "bye good night";
+    }
 }

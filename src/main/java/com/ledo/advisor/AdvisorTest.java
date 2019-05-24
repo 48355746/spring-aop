@@ -52,5 +52,7 @@ public class AdvisorTest {
         waiter.greetTo("John");
         waiter.serveTo("Tom");
         seller.greetTo("seller");
+
+        waiter.Bye();
     }
 }
